@@ -14,19 +14,27 @@ import javax.swing.JOptionPane;
 public class AnimalFarm {
 
 AnimalFarm() {
-	/*
-	 * 1. Ask the user which animal they want, then play the sound of that
-	 * animal.
-	 */
-
-	/* 2. Make it so that the user can keep entering new animals. */
-}
-
+	
+	
+	 String animal= JOptionPane.showInputDialog("Enter an animal");
+		 if(animal.equals("Cow")){
+		playMoo();
+		 }
+		 if(animal.equals("Duck")){
+		playQuack("quack.wav");
+		 }
+		 if(animal.equals("Woof")){
+		playWoof();
+		 }
+		 
+	 }
+		
 void playMoo() {
 	playNoise(mooFile);
+	
 }
 
-void playQuack() {
+void playQuack(String quackFile) {
 	playNoise(quackFile);
 }
 
@@ -34,7 +42,8 @@ void playWoof() {
 	playNoise(woofFile);
 }
 
-String quackFile = "quack.wav";
+
+	
 String mooFile = "moo.wav";
 String woofFile = "woof.wav";
 String meowFile = "meow.wav";
